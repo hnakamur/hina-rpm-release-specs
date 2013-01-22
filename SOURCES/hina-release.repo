@@ -1,0 +1,13 @@
+[hina-release]
+name=hina-release RPM repository
+baseurl=http://naruh.com/pub/hina-release/el6/RPMS/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=http://naruh.com/pub/hina-release/el6/SOURCES/RPM-GPG-KEY-hina-release
+
+[hina-release-noarch]
+name=hina-release noarch RPM repository
+baseurl=http://naruh.com/pub/hina-release/el6/RPMS/noarch
+enabled=1
+gpgcheck=1
+gpgkey=http://naruh.com/pub/hina-release/el6/SOURCES/RPM-GPG-KEY-hina-release

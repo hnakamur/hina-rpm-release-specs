@@ -1,0 +1,5 @@
+%_topdir /home/release
+%_signature gpg
+%_gpg_name Hiroaki Nakamura <hnakamur@gmail.com>
+%packager  Hiroaki Nakamura <hnakamur@gmail.com>
+%vendor    hina-release repo http://naruh.com/pub/hina-release/
