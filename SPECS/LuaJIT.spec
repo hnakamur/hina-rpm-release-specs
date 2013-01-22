@@ -18,6 +18,7 @@ embedded or used as a general-purpose, stand-alone language.
 %package devel
 Summary: Library links and header files for LuaJIT app development
 Group: Development/Libraries
+Requires: %{name} = %{version}-%{release}
 
 %description devel
 LuaJIT-devel contains the library links and header files you'll
