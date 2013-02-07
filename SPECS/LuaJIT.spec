@@ -1,7 +1,7 @@
 Name:		LuaJIT
 Summary:	a Just-In-Time Compiler for Lua.
 Version:	2.0.0
-Release:	2%{?dist}.hn
+Release:	2%{?dist}
 License:	MIT
 Group:		Development/Languages
 URL:		http://luajit.org/

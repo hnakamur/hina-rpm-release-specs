@@ -3,6 +3,7 @@ rpmbuild \
   --define "_topdir /home/repoforge/hina-release" \
   --define "_signature gpg" \
   --define "_gpg_name Hiroaki Nakamura <hnakamur@gmail.com>" \
+  --define "dist `rpm --eval %{dist}`.hn" \
   --define "packager  Hiroaki Nakamura <hnakamur@gmail.com>" \
   --define "vendor    hina-release repo http://naruh.com/pub/hina-release/" \
   $*
