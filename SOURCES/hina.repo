@@ -1,0 +1,13 @@
+[hina]
+name=RHEL $releasever - naruh.com - hina
+baseurl=http://naruh.com/pub/hina-release/el6/RPMS/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-hina
+
+[hina-testing]
+name=RHEL $releasever - naruh.com - hina-testing
+baseurl=http://naruh.com/pub/hina-testing/el6/RPMS/$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-hina

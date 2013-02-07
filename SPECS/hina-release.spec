@@ -1,14 +1,14 @@
 Name:           hina-release
 Version:        6
-Release:        1
+Release:        2
 Summary:        hina-release rpm repository
 
 Group:          System Environment/Base
 License:        MIT
 
 URL:            http://naruh.com/pub/hina-release/
-Source0:        RPM-GPG-KEY-hina-release
-Source1:        hina-release.repo
+Source0:        RPM-GPG-KEY-hina
+Source1:        hina.repo
 
 BuildArch:     noarch
 Requires:      redhat-release >=  %{version}
@@ -50,5 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Feb 07 2013 Hiroaki Nakamura <hnakamur@gmail.com> - 6-2
+- Merged hina-release repo file with hina-testing.
+
 * Tue Jan 22 2013 Hiroaki Nakamura <hnakamur@gmail.com> - 6-1
 - Initial commit.
