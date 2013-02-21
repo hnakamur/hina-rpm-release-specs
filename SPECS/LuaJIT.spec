@@ -1,7 +1,7 @@
 Name:		LuaJIT
 Summary:	a Just-In-Time Compiler for Lua.
-Version:	2.0.0
-Release:	2%{?dist}
+Version:	2.0.1
+Release:	1%{?dist}
 License:	MIT
 Group:		Development/Languages
 URL:		http://luajit.org/
@@ -54,9 +54,9 @@ echo %{_libdir} > $RPM_BUILD_ROOT/etc/ld.so.conf.d/%{name}-%{version}.conf
 %files
 %defattr (-,root,root)
 %attr(0755,root,root) %{_bindir}/luajit
-%attr(0755,root,root) %{_bindir}/luajit-2.0.0
+%attr(0755,root,root) %{_bindir}/luajit-2.0.1
 %attr(0644,root,root) %{_libdir}/libluajit-5.1.so*
-%attr(0644,root,root) %{_datarootdir}/luajit-2.0.0/jit/*.lua
+%attr(0644,root,root) %{_datarootdir}/luajit-2.0.1/jit/*.lua
 %attr(0644,root,root) %{_mandir}/man1/luajit.1*
 %attr(0644,root,root) %{_sysconfdir}/ld.so.conf.d/%{name}-%{version}.conf
 
@@ -67,6 +67,8 @@ echo %{_libdir} > $RPM_BUILD_ROOT/etc/ld.so.conf.d/%{name}-%{version}.conf
 %attr(0644,root,root) %{_libdir}/pkgconfig/luajit.pc
 
 %changelog
+* Thu Feb 21 2013 Hiroaki Nakamura <hnakamur@gmail.com> 2.0.1-1
+- New upstream release 2.0.1
 * Wed Jan 23 2013 Hiroaki Nakamura <hnakamur@gmail.com> 2.0.0-2
 - Change prefix to /usr.
 * Tue Jan 22 2013 Hiroaki Nakamura <hnakamur@gmail.com> 2.0.0-1
