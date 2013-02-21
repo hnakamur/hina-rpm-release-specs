@@ -3,18 +3,14 @@
 %define gem_home %{gem_dir}/%{rb_ver}
 %define ruby_sitelib %(ruby -rrbconfig -e 'puts Config::CONFIG["sitelibdir"]')
 
-%define repoid 70696
-
 Summary: The Ruby standard for packaging ruby libraries
 Name: rubygems
-Version: 1.3.7
+Version: 1.8.25
 Release: 1%{?dist}
 Group: Development/Libraries
-# No GPL version is specified.
-License: Ruby or GPL+
-URL: http://rubyforge.org/projects/rubygems/
-Source0: http://rubyforge.org/frs/download.php/%{repoid}/rubygems-%{version}.tgz
-Patch0: rubygems-1.3.7-noarch-gemdir.patch
+License: MIT or RubyGems License
+URL: http://rubygems.org/
+Source0: http://production.cf.rubygems.org/rubygems/rubygems-%{version}.tgz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root-%(%{__id_u} -n)
 Requires: ruby(abi) = 1.8 ruby-rdoc
 BuildRequires:  ruby ruby-rdoc
@@ -27,7 +23,6 @@ libraries.
 
 %prep
 %setup -q
-%patch0 -p1 -b .noarch
 
 # Some of the library files start with #! which rpmlint doesn't like
 # and doesn't make much sense
@@ -59,9 +54,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-, root, root, -)
-%doc README ChangeLog
+%doc README.rdoc
 %doc History.txt
-%doc GPL.txt LICENSE.txt
+%doc LICENSE.txt
 %dir %{gem_dir}
 %dir %{gem_home}
 %dir %{gem_home}/cache
@@ -72,6 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 %{ruby_sitelib}/*
 
 %changelog
+* Thu Feb 21 2013 Hiroaki Nakamura <hnakamur@gmail.com> - 1.8.25-1
+- Update to 1.8.25, dropping patch0, changing license.
+
 * Mon May 17 2010 Mamoru Tasaka <mtasaka@ioa.s.u-tokyo.ac.jp> - 1.3.7-1
 - Update to 1.3.7, dropping upstreamed patch
 
