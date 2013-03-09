@@ -1,11 +1,12 @@
 Name:		LuaJIT
 Summary:	a Just-In-Time Compiler for Lua.
-Version:	2.0.1
+Version:	2.0.1.1
 Release:	1%{?dist}
 License:	MIT
 Group:		Development/Languages
 URL:		http://luajit.org/
-Source:		LuaJIT-%{version}.tar.gz
+Source:		LuaJIT-2.0.1.tar.gz
+Patch1:         http://luajit.org/download/v2.0.1_hotfix1.patch
 
 Prefix:         %{_prefix}
  
@@ -30,7 +31,8 @@ You do not need to install it if you just want to use LuaJIT,
 however.
 
 %prep
-%setup -q 
+%setup -q -n LuaJIT-2.0.1
+%patch1 -p1
 
 %build
 make PREFIX=%{_prefix}
@@ -67,6 +69,8 @@ echo %{_libdir} > $RPM_BUILD_ROOT/etc/ld.so.conf.d/%{name}-%{version}.conf
 %attr(0644,root,root) %{_libdir}/pkgconfig/luajit.pc
 
 %changelog
+* Sat Mar 09 2013 Hiroaki Nakamura <hnakamur@gmail.com> 2.0.1.1-1
+- Apply the upstream Hotfix#1 patch for LuaJIT-2.0.1
 * Thu Feb 21 2013 Hiroaki Nakamura <hnakamur@gmail.com> 2.0.1-1
 - New upstream release 2.0.1
 * Wed Jan 23 2013 Hiroaki Nakamura <hnakamur@gmail.com> 2.0.0-2
